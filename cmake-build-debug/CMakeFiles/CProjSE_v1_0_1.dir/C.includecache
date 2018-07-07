@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Enoxs/Mac_Document/MacWorkSpace/10.C:C++Project/CProjSE-v1.0.1/main.c
+stdio.h
+-
+stdlib.h
+-
+memory.h
+-
+
