@@ -27,7 +27,8 @@ int main() {
 //    runTask3();
 //    runTask4();
 //    runTask5();
-    runHello();
+    runTask6();
+//    runHello();
     return 0;
 }
 
@@ -35,15 +36,16 @@ runPoint(){
     int auto num = 5;
     int *point = &num;
     int **pot = &point;
-    printf("%p \n",&num);
-    printf("%p \n",point);
+    int *arr[10];
+    printf("num  : %p \n",num);
+    printf("&num : %p \n",&num);
+    printf("point: %p \n",point);
+    printf("*point: %p \n",*point);
 
-    printf("%p \n",num);
-    printf("%p \n",*point);
-
-    printf("%p \n",pot);
-    printf("%p \n",*pot);
-    printf("%p \n",**pot);
+    printf("pot   : %p \n",pot);
+    printf("*pot  : %p \n",*pot);
+    printf("**pot : %p \n",**pot);
+    printf("arr: %d \n",*arr);
 
 
 }
@@ -129,16 +131,6 @@ runTask2(){
     a = a^b;
     printf("a : %d \n" , a );
 }
-
-
-
-
-//Enoxs TO-DO: bit operation
-//Enoxs TO-DO: Recuive funcition output
-
-
-
-
 /**
  * Size Of
  */
@@ -219,3 +211,18 @@ runTask5(){
     printf("go: %d",go);
 }
 int go = 5;
+
+//Enoxs TO-DO: bit operation
+runTask6(){
+    int num = 1;
+    printf("%d \n", ~num);
+    unsigned long num_a = 0x00001111;
+    unsigned long num_b = 0x00000202;
+    unsigned long num_c;
+    num_c = num_a & (~num_b);
+    num_c = num_a | num_c;
+    printf("%lx" ,  num_c);
+
+
+}
+//Enoxs TO-DO: Recuive funcition output
