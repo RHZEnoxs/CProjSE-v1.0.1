@@ -11,19 +11,43 @@
  * bit opertation
  * Recusive function output
  */
+
+static const int enoxs = 55678;
+int  lenght = 6;
+void runHello(){
+    printf("Hello, World! \n");
+    int size = 0;
+    scanf("%d",&size);
+    printf("size: %d %i \n",size,size);
+}
 int main() {
-    runTask1();
+//    runPoint();
+//    runTask1();
 //    runTask2();
 //    runTask3();
 //    runTask4();
+//    runTask5();
+    runHello();
     return 0;
 }
-void runHello(){
-    printf("Hello, World!\n");
-    int size = 0;
-    scanf("%d",&size);
-    printf("size: %d \n",size);
+
+runPoint(){
+    int auto num = 5;
+    int *point = &num;
+    int **pot = &point;
+    printf("%p \n",&num);
+    printf("%p \n",point);
+
+    printf("%p \n",num);
+    printf("%p \n",*point);
+
+    printf("%p \n",pot);
+    printf("%p \n",*pot);
+    printf("%p \n",**pot);
+
+
 }
+
 /**
  *
  *  void *malloc(size_t size);
@@ -108,7 +132,7 @@ runTask2(){
 
 
 
-//Enoxs TO-DO: const static 用法
+
 //Enoxs TO-DO: bit operation
 //Enoxs TO-DO: Recuive funcition output
 
@@ -139,15 +163,59 @@ runTask3(){
 
     char value[] = {'r','h','z'};
     size = sizeof(value);
-    printf("%d \n",size);//
+    printf("%d \n",size);
+
+    char str [] = "Hello World";
+    char *p = str;
+    char *point;
+    printf("str -> %d \n", sizeof(str));
+    printf("*p -> %d \n", sizeof(*p));
+    printf("p -> %d \n", sizeof(p));// WHY?
+    printf("short -> %d \n", sizeof(short));
+    printf("int -> %d \n", sizeof(int));
+    printf("long -> %d \n", sizeof(long));
+    printf("float -> %d \n", sizeof(float));
+    printf("double -> %d \n", sizeof(double));
+    printf("point -> %d \n", sizeof(point));// WHY?
+    sprintf(str,"Enoxs's");
+    printf(str);
+
 }
 
 //Enoxs TO-DO: address : arr + 1 , &arr +1
 runTask4(){
-    int arr[5] = {1};
-    printf("address %p \n",arr);
-    printf("address %p \n",&arr);
+    int arr[5];
+    printf("address arr: %p \n",arr);
+    printf("address &arr: %p \n",&arr);
+    printf("address ++ \n",&arr);
+    printf("address arr+1:%p \n",arr+1);
+    printf("address &arr+1:%p \n",&arr+1);
 
-    printf("address %p \n",arr+1);
-    printf("address %p \n",&arr+1);
+    int num = sizeof(arr) / sizeof(int);
+    printf("num : %d\n",num);
+    printf("*(&arr+1) : %p\n",*(&arr+1));
+    printf("arr : %p\n",arr);
+    num = *(&arr+1) - arr;
+    printf("num : %d\n",num);
 }
+//Enoxs TO-DO: const static 用法
+
+runTask5(){
+    register int h1 = 5;
+    h1++;
+    printf("%d\n",h1);
+    h1 = h1+1;
+    printf("%d\n",h1);
+    const int num = 5;
+    static int size;
+    printf("number and size: %d | %d \n",num,size);
+//    size = 6;
+//    num =7;
+    ++size;
+    printf("number and size: %d | %d \n",num,size);
+    printf("enoxs: %d \n",enoxs);
+
+    extern int go;
+    printf("go: %d",go);
+}
+int go = 5;
